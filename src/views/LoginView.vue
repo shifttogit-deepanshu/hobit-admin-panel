@@ -1,0 +1,39 @@
+<template>
+  <div class="login-page-container">
+    <div class="login-form">
+      <FormHolder />
+    </div>
+    <div class="logo-holder">
+      <LogoHolder />
+    </div>
+  </div>
+</template>
+
+<script>
+import LogoHolder from '../components/LogoHolder.vue'
+import FormHolder from "@/components/FormHolder.vue"
+
+export default {
+  components:{
+    LogoHolder,
+    FormHolder
+}
+}
+</script>
+
+
+<style scoped>
+  .login-page-container{
+    display: flex;
+    height:100vh;
+    width:100vw;
+  }
+  .login-form{
+    width:40%;
+    height:100%;
+  }
+  .logo-holder{
+    width:60%;
+    height:100%
+  }
+</style>
