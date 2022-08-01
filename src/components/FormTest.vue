@@ -52,8 +52,8 @@ export default {
     };
   },
   methods: {
-    handleSubmit(e) {
-      console.log(e.target.user);
+    handleSubmit() {
+      console.log(this.formInline.user,this.formInline.password);
     },
   },
 }
