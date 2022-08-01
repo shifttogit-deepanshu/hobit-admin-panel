@@ -65,23 +65,23 @@ export default {
         text-align: right;
     }
     .login-form-forgot{
-        color:white;
+        color:rgb(69, 69, 69);
     }
     .submit{
         margin:20px 0px;
     }
     .label{
-        color:white;
+        color:rgb(69, 69, 69);
         font-size: 16px;
         font-weight:700;
     }
     .ant-btn-background-ghost:hover{
-        background-color:white!important;
-        color:#014BAE
+        background-color:#CB6CE4!important;
+        color:white;
         
     }
     .ant-btn{
-        color:white;
-        border-color: white;
+        color:#CB6CE4;
+        border-color: #CB6CE4;
     }
 </style>
