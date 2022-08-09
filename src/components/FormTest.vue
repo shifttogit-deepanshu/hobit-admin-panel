@@ -42,18 +42,23 @@
 </template>
 
 <script>
+import router from "../router/index"
+import store from "../store/index"
+
 export default {
     data() {
     return {
       formInline: {
         user: '',
         password: '',
+        content:store.state.app.orderKey
       },
     };
   },
   methods: {
     handleSubmit() {
       console.log(this.formInline.user,this.formInline.password);
+      router.push({ path: '/dashboard' })
     },
   },
 }
