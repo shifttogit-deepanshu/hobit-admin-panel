@@ -25,10 +25,10 @@
           :type="collapsed ? 'menu-unfold' : 'menu-fold'"
           @click="() => (collapsed = !collapsed)"
         />
-        <OrderButtons v-bind:selectedKey="sliderItem"/>
+        <HeaderButtons v-bind:selectedKey="sliderItem"/>
       </a-layout-header>
       <a-layout-content
-        :style="{ margin: '18px 14px', padding: '10px', background: '#fff', minHeight: '280px' ,height:'100%'}"
+        :style="{ margin: '18px 14px', background: '#fff', minHeight: '280px' ,height:'100%'}"
       >
         <DataContents v-bind:sliderItem="sliderItem"/>
       </a-layout-content>
@@ -36,16 +36,14 @@
   </a-layout>
 </template>
 <script>
-import OrderButtons from '@/components/OrderButtons.vue';
-import store from "../store/index"
+import HeaderButtons from '@/components/HeaderButtons.vue';
 import DataContents from '@/components/DataContents.vue';
 
 export default {
     data() {
         return {
             collapsed: false,
-            sliderItem:1,
-            content:store.state.app.orderKey
+            sliderItem:1
         };
     },
     methods:{
@@ -53,7 +51,7 @@ export default {
         this.sliderItem = key
       }
     },
-    components: { OrderButtons, DataContents }
+    components: { HeaderButtons, DataContents }
 };
 </script>
 <style>

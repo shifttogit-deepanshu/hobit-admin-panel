@@ -1,17 +1,17 @@
 <template>
 <div class="container">
-    <div v-if="sliderItem==1" >
-        orders
-    </div>
-    <div v-if="sliderItem==2" >
-        pack Activation
-    </div>
+    <OrdersData v-if="sliderItem==1"/>
+    <PackActivation v-if="sliderItem==2"/>
 </div>    
 </template>
 
 <script>
+import PackActivation from "./PackActivation.vue"
+import OrdersData from "./OrdersData.vue"
+
 export default {
-    props:["sliderItem"]
+    props: ["sliderItem"],
+    components: { OrdersData, PackActivation }
 }
 </script>
 
@@ -19,9 +19,5 @@ export default {
     .container{
         width:100%;
         height:100%;
-        background: red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 </style>
