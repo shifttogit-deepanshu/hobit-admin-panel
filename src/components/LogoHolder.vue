@@ -1,7 +1,7 @@
 <template>
     <div class="logo-holder--container">
         <div class="logo-container">
-            <img src="../assets/logo.png"/>
+            <img class="logo" src="../assets/logo.png"/>
         </div>        
     </div>
 </template>
@@ -29,4 +29,23 @@ export default {
         border-radius: 50%;
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.291);
     }
+    @media only screen and (max-width: 900px) {
+        .logo-holder--container{ 
+                background-image: none;
+                width:100%;
+                height:150px
+            }
+        .logo-container{
+            width:100px;
+            height:100px;
+            padding:0px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo{
+            width:50px;
+            height:50px;
+        }
+     }
 </style>

@@ -26,6 +26,8 @@ export default {
         justify-content: center;
         align-items: center;
         padding:10%;
+
+       
     }
     .login-form--content{
         flex: auto;

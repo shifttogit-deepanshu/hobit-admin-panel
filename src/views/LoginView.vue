@@ -36,4 +36,14 @@ export default {
     width:60%;
     height:100%
   }
+
+   @media only screen and (max-width: 900px) {
+        .login-page-container{ 
+                flex-direction: column-reverse;
+            }
+        .logo-holder{
+                width:100%;
+                height:120px;
+        }
+     }
 </style>

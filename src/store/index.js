@@ -44,7 +44,6 @@ const orders = {
           return b.created - a.created;
         });
         commit('setOrderData',response.data)
-        console.log("got this data............")
         })
         .catch(function (error) {
         console.log(error);
@@ -54,7 +53,7 @@ const orders = {
 }
 
 const pack = {
-  state: {packKey:1,packdata:[],course:null,searcheduser:[]}, 
+  state: {packKey:1,packdata:[],course:"",selectedUsers:[]}, 
   mutations: {
     setPackData(state,packdata){
       state.packdata=packdata
@@ -64,9 +63,19 @@ const pack = {
   },
   setCourse(state,course){
     state.course=course
-},
-  setSearchedUser(state,user){
-    state.searcheduser = [...state.searcheduser,user]
+  },
+  deleteCourse(state){
+    state.course=""
+  },
+  setSelectedUsers(state,user){
+    const index = state.selectedUsers.findIndex(obj => obj.uid === user.uid)
+
+    if (index === -1) {
+      state.selectedUsers = [...state.selectedUsers,user]
+    }
+  },
+  deleteSelectedUser(state,user){
+    state.selectedUsers= state.selectedUsers.filter((item) => item.uid !== user.uid);
   }
 },
   actions: {
@@ -105,8 +114,6 @@ const pack = {
     }
   }
 }
-
-
 
 Vue.use(Vuex)
 

@@ -12,7 +12,7 @@
     </a-button>    
 </div>     
 <div v-if="selectedKey==2">
-    <div v-if="packCourse==null">
+    <div v-if="packCourse.length==0">
         <a-button type="primary" v-bind:class="[packType==1?'btn--active':'btn']" @click="()=>packBtnClicked(1)">
             Course
     </a-button>
@@ -23,9 +23,9 @@
             Live
     </a-button>
     </div>    
-    <div v-if="packCourse!=null">
-        Select User
-    </div> 
+    <a v-if="packCourse.length!=0" class="back-btn" @click="()=>this.$store.commit('deleteCourse')">
+         <a-icon type="left" />Change Course
+    </a> 
 </div>   
 </div>
 </template>
@@ -120,5 +120,9 @@ export default {
     .ant-btn{
         margin:0px 20px;
         font-weight: 500;   
+    }
+    .back-btn{
+        color:#8C62D3;
+        font-size:18px;
     }
 </style>

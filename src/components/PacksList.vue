@@ -25,6 +25,7 @@ export default {
         color:#8C62D3;
         border-radius:5px;
         margin:1px;
+        font-weight:700;
     }
     .pack:hover{
         background:#8b62d31a;

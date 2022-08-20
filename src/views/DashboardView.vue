@@ -28,7 +28,7 @@
         <HeaderButtons v-bind:selectedKey="sliderItem"/>
       </a-layout-header>
       <a-layout-content
-        :style="{ margin: '18px 14px', background: '#fff', minHeight: '280px' ,height:'100%'}"
+        :style="{ margin: '20px', background: '#fff', minHeight: '280px' ,height:'100%'}"
       >
         <DataContents v-bind:sliderItem="sliderItem"/>
       </a-layout-content>
