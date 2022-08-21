@@ -41,4 +41,13 @@ export default {
     .grey{
         color:rgb(115, 115, 115);
     }
+     @media only screen and (max-width: 1500px) {   
+    .user{
+        flex-direction: column;  
+        padding:10px;
+        justify-content: initial;
+        align-items: initial;
+    }
+
+    }
 </style>

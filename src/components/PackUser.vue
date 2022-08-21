@@ -81,4 +81,13 @@ export default {
         font-size:24px;
         margin-bottom:20px;
     }
+     @media only screen and (max-width: 1500px) {   
+        .select{
+            width:100%;
+            border-bottom:1px solid #8C62D3; 
+            border-right:none;
+            height:400px       
+        }
+
+     }
 </style>

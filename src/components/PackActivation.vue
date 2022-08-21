@@ -76,4 +76,9 @@ export default {
     display: flex;
     flex-wrap:wrap;
 }
+ @media only screen and (max-width: 1500px) {   
+    .packcourse{
+        flex-direction: column;
+    }
+ }
 </style>

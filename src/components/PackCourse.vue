@@ -1,8 +1,9 @@
 <template>
     <a @click="()=>clicked(data.UID)" class="main-container">
         <div class="packcourse--container">
-        <div class="packcourse--uid">{{data.UID}}</div>
+        
         <div class="packcourse--image__container"><img v-bind:src="data.bannerImage" class="packcourse--image"/></div>
+        <div class="packcourse--uid">{{data.UID}}</div>
         <div class="packcourse--details">
             <div class="packcourse--name">{{data.name}}</div>
             <div class="packcourse--details__top">
@@ -37,7 +38,7 @@ export default {
         width:250px;
         margin:10px;
         border:1px solid rgba(136, 136, 136, 0.524);
-        border-radius:5px;
+        border-radius:10px;
         box-shadow: 0px 0px rgb(194, 194, 194);
         background-color:rgba(204, 204, 204, 0.08);
     }
@@ -59,7 +60,7 @@ export default {
         transition-duration: 0.5s;
     }
     .packcourse--details{
-        padding:10px;
+        padding:0px 10px;
         box-sizing: border-box;
     }
     .packcourse--name{
@@ -69,6 +70,7 @@ export default {
     }
     .packcourse--uid{
         padding:10px;
+        font-weight:700;
     }
     .packcourse--category{
         color:rgba(54, 54, 54, 0.648);

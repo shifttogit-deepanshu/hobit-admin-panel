@@ -1,7 +1,7 @@
 <template>
 <div class="orderContainer--container">
   <div class="orderContainer--section__top">
-      <div>
+      <div class="orderContainer--orderID">
         <span class="order--bold">Order Id: </span>{{order.orderId}}
       </div>
       <div>
@@ -19,15 +19,33 @@
     </div>   
     <div v-if="pay || orderType==3" class="order--razorID"><span class="order--bold">Payment ID: </span>{{order.razorpay_payment_id}}</div>     
     <div class="order--amount"><span class="order--bold">Amount: </span>₹ {{order.amount}}</div>
-    <div class="order--status__fail order--status" v-if="orderType==1" >
+
+    <div class="order--status__fail order--status status--main" v-if="orderType==1" >
       <div class="order--status__text">Failed</div>
       <a-icon type="close-circle" theme="filled" class="order--symbol__fail"/>
     </div>
-     <div class="order--status__open order--status" v-if="orderType==2" >
+
+     <div class="order--status__fail order--status status--mini" v-if="orderType==1" >
+      <div class="order--status__text">Failed</div>
+      <a-icon type="close-circle" theme="filled" class="order--symbol__fail"/>
+    </div>
+
+     <div class="order--status__open order--status status--main" v-if="orderType==2" >
       <div class="order--status__text">Pending</div>
       <a-icon type="exclamation-circle" theme="filled" class="order--symbol__open"/>
     </div>
-    <div class="order--status__close order--status" v-if="orderType==3" >
+
+    <div class="order--status__open order--status status--mini" v-if="orderType==2" >
+      <div class="order--status__text">Pending</div>
+      <a-icon type="exclamation-circle" theme="filled" class="order--symbol__open"/>
+    </div>
+
+    <div class="order--status__close order--status status--main" v-if="orderType==3" >
+      <div class="order--status__text">Successful</div>
+      <a-icon type="check-circle" theme="filled" class="order--symbol__close"/>
+    </div>
+
+     <div class="order--status__close order--status status--mini" v-if="orderType==3" >
       <div class="order--status__text">Successful</div>
       <a-icon type="check-circle" theme="filled" class="order--symbol__close"/>
     </div>
@@ -146,5 +164,43 @@ export default {
     .orderContainer--container{
       background-color:white;
     }
+   .status--mini{
+        display:none;
+        position:absolute;
+        right:10px;
+        display: none;
+    }
+    
+    @media only screen and (max-width: 700px) {     
+
+      .ant-btn{
+          margin:7px;
+      }
+      .orderContainer--orderID{
+        display:none;
+      }
+      .status--mini{
+        display:none
+      }
+      .status--mini{
+        display:block;
+    }
+       
+    .orderContainer--section__bottom{
+        flex-direction: column;
+      }
+    .order--username{
+      margin:10px;
+    }
+    .order--amount{
+      margin:10px;
+    }
+    .order--razorID{
+      margin:10px;
+    }
+    .status--main{
+      display:none;
+    }
+   }
     
 </style>

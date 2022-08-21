@@ -26,7 +26,6 @@ export default {
         justify-content: center;
         align-items: center;
         padding:10%;
-
        
     }
     .login-form--content{
@@ -38,4 +37,11 @@ export default {
         align-self: flex-start;
         margin-bottom:50px;
     }
+
+    @media only screen and (max-width: 900px) {
+        .login-form--container{
+            box-shadow:none;
+        }
+
+     }
 </style>

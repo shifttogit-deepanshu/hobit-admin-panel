@@ -1,7 +1,7 @@
 <template>
     <a @click="()=>deleteUser(user)">
         <div class="user">
-            <a-icon type="delete" />
+            <div><a-icon type="delete" /></div>
             <div class="even">
                 {{user.name}}
             </div>
@@ -46,5 +46,16 @@ export default {
         width:100%;
         display: flex;
         padding:0px 20px;
+    }
+    @media only screen and (max-width: 1500px) {   
+    .user{
+        flex-direction: column;  
+        justify-content: space-around;
+        align-items: center;
+        padding:10px;
+    }
+    .even{
+        line-break:auto;
+    }
     }
 </style>

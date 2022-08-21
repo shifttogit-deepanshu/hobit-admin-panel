@@ -63,4 +63,10 @@ export default {
         color:rgb(84, 84, 84);
         font-size:18px;
     }
+     @media only screen and (max-width: 1500px) {   
+        .container{
+            width:100%;  
+        }
+
+     }
 </style>

@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from "axios"
 
-
 const orders = {
   state: {data:[],orderKey:1},
   mutations: {
@@ -104,7 +103,20 @@ const pack = {
 
       axios(config)
       .then(function (response) {
- 
+        response.data.sort((a, b) => {
+          return new Date(b.endDate).getTime() - new Date(a.endDate).getTime();
+        });
+        response.data.sort((a, b) => {
+          return new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
+        });
+        // response.data.forEach(item=>{
+        //   if(item.startDate){
+        //     console.log(new Date(item.startDate).getTime())
+        //   }
+        // })
+        // if(response.data.startDate){
+        //   console.log(response.data.startDate)
+        // }
         console.log(response.data);
         commit("setPackData",response.data)
       })

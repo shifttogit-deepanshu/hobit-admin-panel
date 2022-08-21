@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-if="selectedKey==1">
+    <div v-if="selectedKey==1" class="header-btns--container">
     <a-button type="primary" v-bind:class="[orderType==1?'failed--active':'failed']" @click="()=>orderBtnClicked(1)">
             Failed
     </a-button>
@@ -125,4 +125,11 @@ export default {
         color:#8C62D3;
         font-size:18px;
     }
+
+    @media only screen and (max-width: 700px) {        
+    .ant-btn{
+        margin:7px;
+    }
+}
+
 </style>

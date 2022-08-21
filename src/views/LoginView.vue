@@ -44,6 +44,10 @@ export default {
         .logo-holder{
                 width:100%;
                 height:120px;
+                z-index:100
+        }
+         .login-form{
+          width:100%;
         }
      }
 </style>

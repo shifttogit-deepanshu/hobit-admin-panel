@@ -87,4 +87,7 @@ export default {
         color:#CB6CE4;
         border-color: #CB6CE4;
     }
+    a-form-model{
+        width:100%;
+    }
 </style>
