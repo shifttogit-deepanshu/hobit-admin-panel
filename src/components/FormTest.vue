@@ -43,6 +43,7 @@
 
 <script>
 import router from "../router/index"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default {
     data() {
@@ -56,6 +57,20 @@ export default {
   methods: {
     handleSubmit() {
       console.log(this.formInline.user,this.formInline.password);
+      const auth = getAuth();
+        signInWithEmailAndPassword(auth, this.formInline.user, this.formInline.password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log("auth.....................",user)
+            // ...
+        })
+        .catch((error) => {
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
+            console.log("auth..............",error)
+        });
+
       router.push({ path: '/dashboard' })
     },
   },

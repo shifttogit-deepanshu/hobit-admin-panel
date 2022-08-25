@@ -127,10 +127,20 @@ const pack = {
   }
 }
 
+const login = {
+  state: {pageKey:0},
+  mutations: {
+    setPageKey(state,key){
+     state.pageKey = key
+    }
+   },
+}
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
+    login,
     pack,
     orders
   }

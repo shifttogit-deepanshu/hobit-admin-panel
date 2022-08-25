@@ -126,7 +126,7 @@ export default {
         font-size:18px;
     }
 
-    @media only screen and (max-width: 700px) {        
+    @media only screen and (max-width: 900px) {        
     .ant-btn{
         margin:7px;
     }

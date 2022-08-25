@@ -10,15 +10,69 @@
             <ShowUsers v-bind:user="user" v-bind:canDeleted="true"/>
         </div> 
         <a>
-            <div class="activate-btn" v-if="selectedUser.length>0">Activate</div>       
+            <div @click="activatePack" class="activate-btn" v-if="selectedUser.length>0">Activate</div>       
         </a>
     </div>
 </template>
 
 <script>
 import ShowUsers from './ShowUsers.vue'
+import { notification } from 'ant-design-vue'
+import axios from "axios"
 
-export default {
+export default {    
+    methods:{
+        activatePack: function() {
+            let type
+            let course = this.$store.state.pack.course
+            let packKey = this.$store.state.pack.packKey
+            if(packKey==1){
+                type="Course"
+            }
+            else if(packKey==2){
+                type="workshop"
+            }
+            else if(packKey==3){
+                type="live"
+            }
+            this.$store.state.pack.selectedUsers.forEach(user=>{
+                    var data = JSON.stringify({
+                    uid: user.uid,
+                    type ,
+                    name: course
+                    });
+
+                    var config = {
+                    method: 'post',
+                    url: 'https://asia-southeast1-hobitapp-22cb6.cloudfunctions.net/packActivation?',
+                    headers: { 
+                        'Authorization': 'Bearer acd4cfd7157c9af0922acf9a826591a16655ed43697cb016d0effbe5954d02ba', 
+                        'Content-Type': 'application/json'
+                    },
+                    data : data
+                    };
+
+                    axios(config)
+                    .then((response)=> {
+                    console.log(JSON.stringify(response.data));
+                    this.$store.commit("deleteSelectedUser",{uid:user.uid})
+                    notification.open({
+                                message: 'Pack Activated',
+                                description:
+                                'Pack successfully Activated for the User '+ user.uid,
+                                onClick: () => {
+                                console.log('Notification Clicked!');
+                                },
+                            });
+                    })
+                    .catch((error)=> {
+                    console.log(error);
+                    alert("Error! Courses not Added for id: ", user.uid)
+                    });
+
+            })            
+        }
+    },
     computed: {
         selectedUser() {
             console.log("users.........", this.$store.state.pack.selectedUsers);

@@ -2,16 +2,17 @@
     <div class="login-form--container">
         <div class="login-form--content">
             <div class="head">Admin Login</div>
-            <FormTest/>
+            <LoginPhone />
         </div>        
     </div>
 </template>
 
 <script>
-import FormTest from './FormTest.vue';
+// import FormTest from './FormTest.vue';
+import LoginPhone from './LoginPhone.vue';
 
 export default {
-    components: { FormTest }
+    components: { LoginPhone }
 }
 </script>
 

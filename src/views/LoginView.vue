@@ -13,6 +13,7 @@
 import LogoHolder from '../components/LogoHolder.vue'
 import FormHolder from "@/components/FormHolder.vue"
 
+
 export default {
   components:{
     LogoHolder,
